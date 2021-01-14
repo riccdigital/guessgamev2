@@ -16,14 +16,22 @@ button.style.cursor = 'pointer'
 button.addEventListener('click', clickHandler, false)
 
 function clickHandler () {
-  playGame()
+  validateInput()
+}
+
+function validateInput () {
+  playerGuess = parseInt(input.value)
+  if (isNaN(playerGuess)) {
+    output.innerHTML = 'Please enter a number.'
+  } else {
+    playGame()
+  }
 }
 
 function playGame () {
   guessesRemaining = guessesRemaining - 1
   guessesMade = guessesMade + 1
   gameState = 'Guess: ' + guessesMade + ', Remaining: ' + guessesRemaining
-  playerGuess = Number(input.value)
 
   if (playerGuess > guess) {
     output.innerHTML = 'That is too high! ' + gameState
