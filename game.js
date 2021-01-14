@@ -16,7 +16,7 @@ function clickHandler () {
 }
 
 function playGame () {
-  playerGuess = parseInt(input.value)
+  playerGuess = Number(input.value)
 
   if (playerGuess > guess) {
     output.innerHTML = 'That is too high!'
