@@ -6,6 +6,7 @@ let guessesRemaining = 10
 let guessesMade = 0
 let gameState = ''
 let gameWon = false
+const pointer = document.getElementById('pointer')
 
 // Input & Output
 const input = document.getElementById('input')
@@ -54,6 +55,11 @@ function playGame () {
     gameWon = true
     endGame()
   }
+  render()
+}
+
+function render () {
+  pointer.style.left = playerGuess * 3 + 'px'
 }
 
 function endGame () {
