@@ -1,6 +1,6 @@
 
 // Game Variables
-const guess = 1 + Math.floor(Math.random() * 50)
+const guess = Math.ceil(Math.random() * 50)
 let playerGuess = 0
 let guessesRemaining = 10
 let guessesMade = 0
@@ -17,7 +17,7 @@ button.addEventListener('click', clickHandler, false)
 window.addEventListener('keydown', keydownHandler, false)
 
 function keydownHandler (event) {
-  if (event.keycode === 13) {
+  if (event.keyCode === 13) {
     validateInput()
   }
 }
@@ -62,4 +62,13 @@ function endGame () {
   } else {
     output.innerHTML = 'No more guesses left!' + '<br>' + 'The mystery number was: ' + guess + '.'
   }
+  // Disable button
+  button.removeEventListener('click', clickHandler, false)
+  button.disabled = true
+
+  // Disable the Enter Key
+  window.removeEventListener('keydown', keydownHandler, false)
+
+  // Disable the input
+  input.disabled = true
 }
