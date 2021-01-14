@@ -64,7 +64,7 @@ function render () {
 
 function endGame () {
   if (gameWon) {
-    output.innerHTML = "Yes, it's " + guess + '!' + '<br>' + 'It only took you ' + guessesMade + ' guesses.'
+    output.innerHTML = "Yes, it's " + guess + '!' + '<br>' + 'It took you ' + guessesMade + ' guesses.'
   } else {
     output.innerHTML = 'No more guesses left!!!' + '<br>' + 'The mystery number was: ' + guess + '.'
   }
